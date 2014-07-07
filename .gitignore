@@ -8,11 +8,12 @@
 # User-specific files
 *.suo
 *.user
-*.sln.docstates
+# *.sln.docstates
 
 # Build results
 Win32/
 ipch/
+lagRed/GeneratedFiles
 
 lagRed/[Dd]ebug/
 lagRed/[Rr]elease/
