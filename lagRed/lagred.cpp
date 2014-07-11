@@ -18,7 +18,7 @@ void lagRed::changeLagLabel(int lag)
 
 void lagRed::changeLossRateLabel(int rate)
 {
-	this->getUI().labelLossRate->setText(QString::number(rate) + " [1/s]");
+	this->getUI().labelLossRate->setText(QString::number(rate) + " %");
 }
 
 void lagRed::setLag(int lag, int maxLag, int minLag)
@@ -34,5 +34,5 @@ void lagRed::setLossRate(int rate, int maxRate, int minRate)
 	this->getUI().horizontalSliderLossRate->setMaximum(maxRate);
 	this->getUI().horizontalSliderLossRate->setMinimum(minRate);
 	this->getUI().horizontalSliderLossRate->setValue(rate);
-	this->getUI().labelLossRate->setText(QString::number(rate) + " [1/s]");
+	this->getUI().labelLossRate->setText(QString::number(rate) + " %");
 }

@@ -30,17 +30,20 @@ int main(int argc, char *argv[])
     // Create a view, put a scene in it and add tiny circles
     // in the scene
     QGraphicsScene * scene = new QGraphicsScene();
-    w.getUI().graphicsView->setScene(scene);
 
-
-	scene->setSceneRect(-100, -100, 100, 100);
 	scene->addSimpleText(QString("Robot 1"));
+
+	scene->addLine(0, 0, -50, 0);
+    scene->addLine(-50, 0, -50, -50);
+    scene->addLine(-50, -50, 0, 0);
 
     for(int i = 0; i< points.size(); i++)
         scene->addEllipse(points[i].x(), points[i].y(), 10, 10);
 
 	
 	w.show();
+
+	 w.getUI().graphicsView->setScene(scene);
 
 	QObject::connect(threadSPLRequest, SIGNAL(print(QString)), w.getUI().textEditRequest, SLOT(append(QString)), Qt::QueuedConnection);
 	QObject::connect(threadSPLResponse, SIGNAL(print(QString)), w.getUI().textEditResponse, SLOT(append(QString)), Qt::QueuedConnection);
